@@ -5,9 +5,9 @@ FROM node:10-slim
 USER node
 
 # Create app directory (with user `node`)
-RUN mkdir /app
+RUN mkdir /home/node/app
 
-WORKDIR /app
+WORKDIR /home/node/app
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
