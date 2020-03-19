@@ -5,18 +5,20 @@ FROM node:10-slim
 USER node
 
 # Create app directory (with user `node`)
-RUN mkdir -p /app
+RUN mkdir -p /home/node/app
 
-WORKDIR /app
+WORKDIR /home/node/app
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
-COPY --chown=node frontend/package*.json ./
+COPY --chown=node backend/package*.json ./
 
-RUN (cd ./frontend && npm install)
+RUN (cd ./backend && npm install)
 
 # Bundle app source code
 COPY --chown=node . .
 
-RUN (cd ./frontend && npm run build)
+RUN (cd ./backend && npm run build)
+
+RUN (cd ./backend && npm run start:prod)
