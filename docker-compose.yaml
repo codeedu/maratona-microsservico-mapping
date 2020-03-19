@@ -3,7 +3,7 @@ version: '3'
 services:
 
   backend:
-    build: .
+    build: ./backend
     entrypoint: ./backend/.docker/entrypoint.sh
     container_name: micro-mapping-backend
     environment:
