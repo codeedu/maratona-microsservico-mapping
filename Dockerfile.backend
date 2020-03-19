@@ -14,11 +14,11 @@ WORKDIR /home/node/app
 # where available (npm@5+)
 COPY --chown=node backend/package*.json ./
 
-RUN (cd ./backend && npm install)
+RUN npm install
 
 # Bundle app source code
-COPY --chown=node . .
+COPY --chown=node ./backend .
 
-RUN (cd ./backend && npm run build)
+RUN npm run build
 
-RUN (cd ./backend && npm run start:prod)
+RUN npm run start:prod

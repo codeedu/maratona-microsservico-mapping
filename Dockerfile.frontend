@@ -14,9 +14,9 @@ WORKDIR /app
 # where available (npm@5+)
 COPY --chown=node frontend/package*.json ./frontend/
 
-RUN (cd ./frontend && npm install)
+RUN npm install
 
 # Bundle app source code
-COPY --chown=node . .
+COPY --chown=node ./frontend .
 
-RUN (cd ./frontend && npm run build)
+RUN npm run build
