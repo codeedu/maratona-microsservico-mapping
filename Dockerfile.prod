@@ -1,0 +1,28 @@
+# Check out https://hub.docker.com/_/node to select a new base image
+FROM node:10-slim
+
+# Set to a non-root built-in user `node`
+USER node
+
+# Create app directory (with user `node`)
+RUN mkdir -p /home/node/app
+
+WORKDIR /home/node/app
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY --chown=node backend/package*.json ./backend/
+COPY --chown=node frontend/package*.json ./frontend/
+
+RUN (cd ./backend && npm install)
+RUN (cd ./frontend && npm install)
+
+# Bundle app source code
+COPY --chown=node . .
+
+RUN (cd ./frontend && npm run build-nest)
+
+RUN (cd ./backend && npm run build)
+
+CMD cd ./backend && npm run start:prod

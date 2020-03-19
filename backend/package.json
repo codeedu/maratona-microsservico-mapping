@@ -23,9 +23,11 @@
   "dependencies": {
     "@golevelup/nestjs-rabbitmq": "^1.10.0",
     "@nestjs/common": "^6.10.14",
+    "@nestjs/config": "^0.4.0",
     "@nestjs/core": "^6.10.14",
     "@nestjs/platform-express": "^6.10.14",
     "@nestjs/platform-socket.io": "^6.11.9",
+    "@nestjs/serve-static": "^2.1.0",
     "@nestjs/typeorm": "^6.3.3",
     "@nestjs/websockets": "^6.11.9",
     "@types/socket.io": "^2.1.4",

@@ -7,7 +7,7 @@ import {SnackbarProvider} from "notistack";
 function App() {
     return (
         <SnackbarProvider>
-            <BrowserRouter>
+            <BrowserRouter basename={process.env.NODE_ENV === 'development'? '/': '/client'}>
                 <Switch>
                     <Route path={'/orders/:id/mapping'} component={Mapping} exact={true}/>
                 </Switch>

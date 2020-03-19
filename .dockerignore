@@ -1,0 +1,7 @@
+backend/node_modules
+backend/npm-debug.log
+backend/dist
+# Cache used by TypeScript's incremental build
+backend/*.tsbuildinfo
+frontend/node_modules
+frontend/npm-debug.log
