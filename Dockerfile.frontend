@@ -19,4 +19,4 @@ RUN npm install
 # Bundle app source code
 COPY --chown=node ./frontend .
 
-RUN npm run build
+CMD ["npm", "run", "start:prod"]
