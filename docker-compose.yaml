@@ -14,7 +14,7 @@ services:
       - .:/home/node/app
     networks:
       - app-network
-      - rabbitmq_network
+      - maratona-microsservico-rabbitmq_network
 
   frontend:
     build: ./frontend
@@ -50,5 +50,5 @@ services:
 networks:
   app-network:
     driver: bridge
-  rabbitmq_network:
+  maratona-microsservico-rabbitmq_network:
     external: true
