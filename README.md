@@ -43,3 +43,7 @@ $ docker-compose up
 http://localhost:3001 para a API Rest do microserviço
 http://localhost:3002 para o front-end que contém a interface de mapeamento da entrega
 ```
+
+## Fizemos um vídeo no Youtube ensinando como rodar na práticos os microserviços com Nest.js
+
+[https://www.youtube.com/watch?v=MRk2Y_h2F-Q](https://www.youtube.com/watch?v=MRk2Y_h2F-Q)
